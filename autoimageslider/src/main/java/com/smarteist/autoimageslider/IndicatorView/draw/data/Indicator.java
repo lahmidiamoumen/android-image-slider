@@ -10,8 +10,8 @@ public class Indicator {
     public static final int MIN_COUNT = 1;
     public static final int COUNT_NONE = -1;
 
-    public static final int DEFAULT_RADIUS_DP = 6;
-    public static final int DEFAULT_PADDING_DP = 8;
+    public static final int DEFAULT_RADIUS_DP = 3;
+    public static final int DEFAULT_PADDING_DP = 5;
 
     private int height;
     private int width;
