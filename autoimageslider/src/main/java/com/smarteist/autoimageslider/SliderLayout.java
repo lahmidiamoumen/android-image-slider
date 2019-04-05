@@ -238,6 +238,10 @@ public class SliderLayout extends FrameLayout implements CircularSliderHandle.Cu
         //Starting auto cycle at the time of setting up of layout
         startAutoCycle();
     }
+    
+    public void setLoopScroll(Boolean bool){
+        circularSliderHandle.setLoopScroll(bool);
+    }
 
     public void clearSliderViews() {
         ((SliderAdapter) mFlippingPagerAdapter).removeAllSliderViews();
