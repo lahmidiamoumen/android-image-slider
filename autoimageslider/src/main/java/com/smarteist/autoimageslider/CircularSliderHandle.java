@@ -5,6 +5,7 @@ import android.support.v4.view.ViewPager;
 class CircularSliderHandle implements ViewPager.OnPageChangeListener {
     private ViewPager mViewPager;
     private int mCurrentPosition;
+    private boolean mLoopScroll = false;
 
     private CurrentPageListener currentPageListener;
 
@@ -28,10 +29,14 @@ class CircularSliderHandle implements ViewPager.OnPageChangeListener {
         if (currentPage == mViewPager.getAdapter().getCount()-1 || currentPage == 0){
             int previousState = mCurrentPosition;
             mCurrentPosition = state;
-            if (previousState == 1 && mCurrentPosition == 0){
+            if (previousState == 1 && mCurrentPosition == 0 && mLoopScroll){
                 mViewPager.setCurrentItem(currentPage == 0 ? mViewPager.getAdapter().getCount()-1 : 0);
             }
         }
+    }
+    
+    public void setLoopScroll(Boolean bool){
+        mLoopScroll = bool;
     }
 
     @Override
